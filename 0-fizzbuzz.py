@@ -1,23 +1,27 @@
 #!/usr/bin/python3
+"""
+FizzBuzz Program: Prints numbers 1 to n, but for multiples of three prints
+"Fizz" instead of the number, for the multiples of five prints "Buzz", and for
+numbers which are multiples of both three and five prints "FizzBuzz".
+"""
 
 import sys
 
 def fizzbuzz(n):
-    """Print the numbers from 1 to n separated by a space.
-    For multiples of three, print Fizz instead of the number.
-    For multiples of five, print Buzz instead of the number.
-    For multiples of three and five, print FizzBuzz instead of the number.
-    """
+    """Implements the FizzBuzz logic."""
+    if n < 1:
+        return
+
     for i in range(1, n + 1):
-        if i % 3 == 0 and i % 5 == 0:
-            print("FizzBuzz", end=" ")
-        elif i % 3 == 0:
-            print("Fizz", end=" ")
-        elif i % 5 == 0:
-            print("Buzz", end=" ")
+        if (i % 3) == 0 and (i % 5) == 0:
+            print("FizzBuzz", end=' ')
+        elif (i % 3) == 0:
+            print("Fizz", end=' ')
+        elif (i % 5) == 0:
+            print("Buzz", end=' ')
         else:
-            print(i, end=" ")
-    print()
+            print(i, end=' ')
+    print()  # New line at the end of the sequence
 
 if __name__ == '__main__':
     if len(sys.argv) <= 1:
@@ -28,3 +32,4 @@ if __name__ == '__main__':
 
     number = int(sys.argv[1])
     fizzbuzz(number)
+
